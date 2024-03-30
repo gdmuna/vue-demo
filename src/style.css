@@ -1,0 +1,131 @@
+:root {
+    font-family: Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+
+    color-scheme: light dark;
+    color: rgba(0, 0, 0, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 10s linear infinite;
+    -moz-animation: Gradient 10s linear infinite;
+    animation: Gradient 10s linear infinite;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex; /* 使用Flexbox布局 */
+    flex-direction: column; /* 主轴方向为垂直方向 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+
+    overflow: auto;
+}
+
+.grid {
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    transition: all 0.25s ease;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+}
+
+.tip-card {
+    border-radius: 10px 15px 15px 10px;
+    background-color: #46c93a0a;
+    border-color: #42b983;
+    color: #2e825c;
+    padding: 0.1rem 1rem;
+    border-left-width: 0.1rem;
+    border-left-style: solid;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+li span {
+    background-color: #dddddd;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 1rem auto 1rem auto;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+
+ol {
+    font-size: 1.2rem;
+    margin: 1rem auto 1rem 1.5rem;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1rem auto 1rem auto;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
