@@ -18,6 +18,7 @@ function request(url, data, options) {
             }
             return res.json();
         })
+        .then((res) => res.data)
         .catch((error) => {
             console.error('Request error:', error);
             throw error;
