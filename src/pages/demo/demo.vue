@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <div class="grid">
             <vs-row>
                 <vs-col>
@@ -27,10 +27,11 @@
 </template>
 
 <script>
-import user from '../../api/user';
+import user from '@/api/user';
 
 export default {
-    name: 'demo',
+    name: 'DemoPage',
+    components: {},
     data() {
         return {
             userId: '',

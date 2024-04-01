@@ -12,7 +12,9 @@ export default {
     created() {
         document.addEventListener('backbutton', this.goBack); // 监听移动端设备的后退按钮
     },
-    destroyed() {
+    mounted() {},
+    updated() {},
+    unmounted() {
         document.removeEventListener('backbutton', this.goBack); // 页面销毁时移除监听
     },
     methods: {

@@ -14,7 +14,7 @@ export default defineConfig(({ command, mode }) => {
         // 配置路径别名
         resolve: {
             alias: {
-                '@': './src'
+                '@': '/src'
             }
         },
         define: {
