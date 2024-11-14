@@ -1,57 +1,35 @@
 <template>
-    <div class="main-container">
-        <div class="grid">
-            <vs-row>
-                <vs-col>
-                    <h1>Vue Demo</h1>
-                </vs-col>
-            </vs-row>
-            <vs-row>
-                <vs-col :sm="6">
-                    <vs-input v-model="userId" label="userId" label-float />
-                </vs-col>
-                <vs-col :sm="6">
-                    <vs-button @click="queryUserInfo(userId)">查询用户信息</vs-button>
-                </vs-col>
-            </vs-row>
-            <vs-row>
-                <vs-col>
-                    <p>用户ID {{ userInfo.userId }}</p>
-                    <p>用户姓名 {{ userInfo.userName }}</p>
-                    <p>用户性别 {{ userInfo.gender }}</p>
-                    <p>用户年龄 {{ userInfo.age }}</p>
-                </vs-col>
-            </vs-row>
-        </div>
+    <div class="w-full max-w-screen-sm h-full mx-auto px-10 py-10">
+        <var-card class="" title="标题 Title" subtitle="副标题 Subtitle" description="这是一个 Demo 页。This is a demo card.">
+            <template #extra>
+                <var-space>
+                    <var-button color="pink" text-color="#fff">
+                        <font-awesome-icon icon="fa-solid fa-heart" />
+                        &nbsp;
+                        <font-awesome-icon icon="fa-regular fa-heart" />
+                    </var-button>
+                    <var-button type="primary">Button 1</var-button>
+                    <var-button type="info">Button 2</var-button>
+                </var-space>
+            </template>
+        </var-card>
     </div>
 </template>
 
 <script>
-import user from '@/api/user';
-
 export default {
     name: 'DemoPage',
     components: {},
+    setup() {
+        return {};
+    },
     data() {
-        return {
-            userId: '',
-            userInfo: {
-                userId: '',
-                userName: '',
-                gender: '',
-                age: ''
-            }
-        };
+        return {};
     },
     created() {},
     mounted() {},
     updated() {},
-    methods: {
-        async queryUserInfo(userId) {
-            const userInfo = await user.getUserInfo({ userId });
-            this.userInfo = userInfo[0];
-        }
-    }
+    methods: {}
 };
 </script>
 
