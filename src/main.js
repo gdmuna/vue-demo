@@ -1,24 +1,35 @@
+// framework - Vue
 import { createApp } from 'vue';
 
-import router from './router';
+// router - Vue-Router
+import router from '@/router';
 
-import Vuesax from 'vuesax-alpha';
-import 'vuesax-alpha/theme-chalk/index.css';
-import 'vuesax-alpha/theme-chalk/dark/css-vars.css';
+// store - Pinia
+import { createPinia } from 'pinia';
+const pinia = createPinia();
+import store from '@/stores/store';
 
-import './style.css';
+// api
+import api from '@/api/api';
 
-import App from './App.vue';
+// ui - Varlet
+// becase of auto-import, we don't need to import Varlet here
+// import Varlet from '@varlet/ui';
+// import '@varlet/ui/es/style';
+import '@varlet/touch-emulator';
 
-const app = createApp(App)
-    .use(router)
-    .use(Vuesax, {
-        colors: {
-            primary: 'rgb(36, 159, 253)',
-            success: 'rgb(23, 201, 100)',
-            danger: 'rgb(242, 19, 93)',
-            warning: 'rgb(255, 130, 0)',
-            dark: 'rgb(36, 33, 69)'
-        }
-    })
-    .mount('#app');
+// icons - Font-Awesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+library.add(fas, far, fab);
+
+// App Entry
+import App from '@/App.vue';
+
+// global styles
+import '@/style.css';
+
+const app = createApp(App).use(router).use(pinia).use(store).use(api).component('font-awesome-icon', FontAwesomeIcon).mount('#app');

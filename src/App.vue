@@ -6,6 +6,9 @@
 export default {
     name: 'App',
     components: {},
+    setup() {
+        return {};
+    },
     data() {
         return {};
     },
