@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 :root {
-    font-family: Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+    font-family:
+        Douyin Sans,
+        Helvetica,
+        Arial,
+        Menlo,
+        Monaco,
+        monospace,
+        sans-serif;
 
     color-scheme: light dark;
     color: rgba(0, 0, 0, 0.87);

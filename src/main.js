@@ -26,6 +26,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 library.add(fas, far, fab);
 
+// fonts - DouyinSans
+import '@chinese-fonts/dymh/dist/DouyinSansBold/result.css';
+
 // App Entry
 import App from '@/App.vue';
 
