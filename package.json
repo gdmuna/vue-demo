@@ -2,6 +2,18 @@
     "name": "vue-demo",
     "version": "0.1.0",
     "description": "一个基于 Vue.js 框架构建的前端服务 Demo",
+    "keywords": [
+        "vuejs",
+        "vue3",
+        "framework",
+        "web",
+        "http",
+        "router",
+        "store",
+        "ui",
+        "demo",
+        "template"
+    ],
     "license": "MIT",
     "author": {
         "name": "Seele.Clover",

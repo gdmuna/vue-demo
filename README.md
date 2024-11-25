@@ -67,7 +67,7 @@
 1. 前置条件
 
     - Node.js 20 LTS 及以上版本
-    - Yarn
+    - NPM / Yarn / PNPM
 
 2. 安装依赖
 
