@@ -12,12 +12,6 @@ import store from '@/stores/store';
 // api
 import api from '@/api/api';
 
-// ui - Varlet
-// becase of auto-import, we don't need to import Varlet here
-// import Varlet from '@varlet/ui';
-// import '@varlet/ui/es/style';
-import '@varlet/touch-emulator';
-
 // icons - Font-Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';

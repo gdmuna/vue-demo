@@ -1,25 +1,47 @@
 <template>
     <div class="w-full max-w-screen-sm h-full mx-auto px-10 py-10">
-        <var-card class="" title="标题 Title" subtitle="副标题 Subtitle" description="这是一个 Demo 页。This is a demo card.">
-            <template #extra>
-                <var-space>
-                    <var-button color="pink" text-color="#fff">
-                        <font-awesome-icon icon="fa-solid fa-heart" />
-                        &nbsp;
-                        <font-awesome-icon icon="fa-regular fa-heart" />
-                    </var-button>
-                    <var-button type="primary">Button 1</var-button>
-                    <var-button type="info">Button 2</var-button>
-                </var-space>
-            </template>
-        </var-card>
-        <var-card class="mt-4" title="查询学号对应的姓名">
-            <template #default>
-                <var-input v-model="userId" placeholder="请输入学号"></var-input>
-                <var-button class="mt-2" type="info" block @click="summit()">查询</var-button>
-                <p class="mt-2 text-center">{{ userId }} 对应的姓名是 {{ userName }}</p>
-            </template>
-        </var-card>
+        <div class="m-4 flex flex-row justify-center items-center">
+            <h1 class="text-2xl font-bold">Demo Page</h1>
+        </div>
+        <div class="m-4 flex flex-row flex-wrap justify-center items-center gap-2">
+            <button class="btn btn-neutral">Neutral</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-accent">Accent</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-error">Error</button>
+        </div>
+        <div class="m-4 flex flex-row flex-wrap justify-center items-center gap-2">
+            <button class="btn btn-soft">Default</button>
+            <button class="btn btn-soft btn-primary">Primary</button>
+            <button class="btn btn-soft btn-secondary">Secondary</button>
+            <button class="btn btn-soft btn-accent">Accent</button>
+            <button class="btn btn-soft btn-info">Info</button>
+            <button class="btn btn-soft btn-success">Success</button>
+            <button class="btn btn-soft btn-warning">Warning</button>
+            <button class="btn btn-soft btn-error">Error</button>
+        </div>
+        <div class="m-4 flex flex-col flex-wrap justify-center items-center gap-2">
+            <input type="text" placeholder="请输入姓名" class="input" v-model="userName" />
+            <input type="text" placeholder="请输入邮箱" class="input" v-model="userMail" />
+            <button class="btn btn-wide btn-soft btn-secondary" @click="summit()">
+                <font-awesome-icon icon="fa-solid fa-heart" />
+                提交
+            </button>
+        </div>
+        <div class="m-4 flex flex-col flex-wrap justify-center items-center gap-2" :class="isShow ? 'block' : 'hidden'">
+            <div class="card w-96 bg-base-100 card-md shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title">尊敬的 {{ userName }}</h2>
+                    <p>你的邮件地址是 {{ userMail }}</p>
+                    <div class="justify-end card-actions">
+                        <button class="btn btn-primary" @click="confirm()">我已知晓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -32,19 +54,22 @@ export default {
     },
     data() {
         return {
-            userId: null,
-            userName: null
+            isShow: false,
+            userName: null,
+            userMail: null
         };
     },
     created() {},
     mounted() {},
     updated() {},
     methods: {
+        // 提交按钮
         async summit() {
-            const userInfo = await this.$api.user.getUserInfo({
-                userId: this.userId
-            });
-            this.userName = userInfo[0].userName;
+            this.isShow = true;
+        },
+        // 确认按钮
+        async confirm() {
+            this.isShow = false;
         }
     }
 };

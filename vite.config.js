@@ -1,8 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import components from 'unplugin-vue-components/vite';
-import autoImport from 'unplugin-auto-import/vite';
-import { VarletImportResolver } from '@varlet/import-resolver';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -12,7 +10,7 @@ export default defineConfig(({ command, mode }) => {
     // vite 配置
     return {
         root: './', // 项目根目录（index.html 文件所在的位置）
-        base: './', // 开发或生产环境服务的公共基础路径
+        base: '/', // 开发或生产环境服务的公共基础路径
         envDir: './config', // 用于加载 .env 文件的目录
         // 配置路径别名
         resolve: {
@@ -30,21 +28,13 @@ export default defineConfig(({ command, mode }) => {
             hmr: true, // 开启热更新
             proxy: {
                 '/api': {
-                    target: 'http://127.0.0.1:33001',
+                    target: 'http://localhost:33001',
                     changeOrigin: true,
                     rewrite: (path) => path.replace(/^\/api/, '/api')
                 }
             }
         },
-        plugins: [
-            vue(),
-            components({
-                resolvers: [VarletImportResolver()]
-            }),
-            autoImport({
-                resolvers: [VarletImportResolver({ autoImport: true })]
-            })
-        ],
+        plugins: [vue(), tailwindcss()],
         // 打包时自动去除 console 和 debugger
         esbuild: {
             drop: env?.VITE_DROP_CONSOLE === 'true' ? ['console', 'debugger'] : []
